@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  torre: MyString
+  n_apto: MyString
+  id_page: MyString
+  senha: MyString
+  envio: 1
+  n_encomendas: 1
+  box: one
+
+two:
+  torre: MyString
+  n_apto: MyString
+  id_page: MyString
+  senha: MyString
+  envio: 1
+  n_encomendas: 1
+  box: two

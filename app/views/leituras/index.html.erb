@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Leituras</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Torre</th>
+      <th>N apto</th>
+      <th>Id page</th>
+      <th>Senha</th>
+      <th>Envio</th>
+      <th>N encomendas</th>
+      <th>Box</th>
+      <th>Ativo/Inativo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @leituras.each do |leitura| %>
+      <tr>
+        <td><%= leitura.torre %></td>
+        <td><%= leitura.n_apto %></td>
+        <td><%= leitura.id_page %></td>
+        <td><%= leitura.senha %></td>
+        <td><%= leitura.envio %></td>
+        <td><%= leitura.n_encomendas %></td>
+        <td><%= leitura.box_id %></td>
+        <td><%= leitura.ativo_inativo %></td>
+        <td><%= link_to 'Show', leitura %></td>
+        <td><%= link_to 'Edit', edit_leitura_path(leitura) %></td>
+        <td><%= link_to 'Destroy', leitura, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Leitura', new_leitura_path %>

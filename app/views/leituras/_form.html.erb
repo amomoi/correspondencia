@@ -1,0 +1,57 @@
+<%= form_with(model: leitura) do |form| %>
+  <% if leitura.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(leitura.errors.count, "error") %> prohibited this leitura from being saved:</h2>
+
+      <ul>
+        <% leitura.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :torre %>
+    <%= form.text_field :torre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :n_apto %>
+    <%= form.text_field :n_apto %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_page %>
+    <%= form.text_field :id_page %>
+  </div>
+
+  <div class="field">
+    <%= form.label :senha %>
+    <%= form.text_field :senha %>
+  </div>
+
+  <div class="field">
+    <%= form.label :envio %>
+    <%= form.number_field :envio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :n_encomendas %>
+    <%= form.number_field :n_encomendas %>
+  </div>
+
+  <div class="field">
+    <%= form.label :box_id %>
+    <%= form.text_field :box_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ativo_inativo %>
+    <%= form.text_field :ativo_inativo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

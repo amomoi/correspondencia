@@ -1,8 +1,10 @@
 class LeiturasController < ApplicationController
   before_action :set_leitura, only: %i[ show edit update destroy ]
+  skip_before_action :verify_authenticity_token
 
   # GET /leituras or /leituras.json
   def index
+    releaseCrossDomain
     @leituras = Leitura.all
   end
 
@@ -21,6 +23,7 @@ class LeiturasController < ApplicationController
 
   # POST /leituras or /leituras.json
   def create
+    releaseCrossDomain
     @leitura = Leitura.new(leitura_params)
 
     respond_to do |format|
@@ -66,5 +69,15 @@ class LeiturasController < ApplicationController
     # Only allow a list of trusted parameters through.
     def leitura_params
       params.require(:leitura).permit(:torre, :n_apto, :id_page, :senha, :envio, :n_encomendas, :box_id, :ativo_inativo)
+    end
+
+    def releaseCrossDomain
+
+      origin = request.headers["Origin"]
+      
+      headers['Access-Control-Allow-Origin'] = '*'
+      headers['Access-Control-Allow-Methods'] = 'GET, POST'
+      headers['Access-Control-Request-Method'] = '*'
+      headers['Access-Control-Allow-Headers'] = '*'
     end
 end

@@ -80,6 +80,12 @@ class LeiturasController < ApplicationController
 
     def releaseCrossDomain
 
+      if (not origin.nil?) and (origin == "https://ib.ampmsolucoes.com.br" or origin == "https://api.ampmsolucoes.com.br" or origin == "192.168.15.10")
+        origin = origin
+        else
+          origin = ""
+      end
+
       origin = request.headers["Origin"]
       
       headers['Access-Control-Allow-Origin'] = '*'

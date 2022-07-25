@@ -60,6 +60,13 @@ class LeiturasController < ApplicationController
     end
   end
 
+  def checksenha
+    releaseCrossDomain
+    @leitura = Leitura.where(senha: params[:senha])
+    render json: @leitura, only: [:box_id]    
+  end
+  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_leitura

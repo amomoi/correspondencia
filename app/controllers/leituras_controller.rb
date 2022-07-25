@@ -63,7 +63,8 @@ class LeiturasController < ApplicationController
   def checksenha
     releaseCrossDomain
     @leitura = Leitura.where(senha: params[:senha])
-    render json: @leitura, only: [:box_id]    
+    render json: @leitura, only: [:box_id] 
+    #isto é um comentario agora 18:22   
   end
   
 

@@ -92,7 +92,7 @@ class LeiturasController < ApplicationController
       origin = request.headers["Origin"]
       
       headers['Access-Control-Allow-Origin'] = '*'
-      headers['Access-Control-Allow-Methods'] = 'GET, POST'
+      headers['Access-Control-Allow-Methods'] = '*'
       headers['Access-Control-Request-Method'] = '*'
       headers['Access-Control-Allow-Headers'] = '*'
     end

@@ -10,6 +10,8 @@ class LeiturasController < ApplicationController
 
   # GET /leituras/1 or /leituras/1.json
   def show
+    releaseCrossDomain
+    render json: @leitura
   end
 
   # GET /leituras/new
@@ -64,8 +66,14 @@ class LeiturasController < ApplicationController
     releaseCrossDomain
     @leitura = Leitura.where(senha: params[:senha])
     render json: @leitura, only: [:box_id] 
-    #isto é um comentario agora 18:22   
   end
+
+  def checkid
+    releaseCrossDomain
+    @leitura = Leitura.where(senha: params[:senha])
+    render json: @leitura, only: [:id] 
+  end
+
   
 
   private

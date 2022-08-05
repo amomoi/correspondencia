@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get 'home', to: 'home#index'
   get '/boxrelease', to: 'leituras#checksenha'
   get '/id_out', to: 'leituras#checkid'
+  get '/check_ativo', to: 'leituras#checkativo'
 
 end

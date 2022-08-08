@@ -70,7 +70,7 @@ class LeiturasController < ApplicationController
 
   def checkid
     releaseCrossDomain
-    @leitura = Leitura.where(senha: params[:senha])
+    @leitura = Leitura.where(senha: params[:senha], ativo_inativo: params[:ativo_inativo])
     render json: @leitura, only: [:id] 
   end
 

@@ -80,6 +80,18 @@ class LeiturasController < ApplicationController
     render json: @leitura
   end
 
+  def proc_por_unidade
+    releaseCrossDomain
+    @leitura = Leitura.where(torre: params[:torre], n_apto: params[:n_apto],ativo_inativo: params[:ativo_inativo])
+    render json: @leitura
+  end
+
+  def proc_por_box
+    releaseCrossDomain
+    @leitura = Leitura.where(box: params[:box], ativo_inativo: params[:ativo_inativo])
+    render json: @leitura
+  end
+
   
 
   private

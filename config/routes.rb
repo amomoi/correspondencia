@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   get '/boxrelease', to: 'leituras#checksenha'
   get '/id_out', to: 'leituras#checkid'
   get '/check_ativo', to: 'leituras#checkativo'
+  get '/proc_por_unidade', to: 'leituras#proc_por_unidade'
+  get '/proc_por_box', to: 'leituras#proc_por_box'
 
 end

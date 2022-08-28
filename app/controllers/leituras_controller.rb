@@ -12,6 +12,7 @@ class LeiturasController < ApplicationController
   def show
     releaseCrossDomain
     render json: @leitura
+
   end
 
   # GET /leituras/new
@@ -74,9 +75,9 @@ class LeiturasController < ApplicationController
     render json: @leitura, only: [:id] 
   end
 
-  def checkativo
+  def checkativoivo
     releaseCrossDomain
-    @leitura = Leitura.where(torre: params[:torre], n_apto: params[:n_apto], ativo_inativo: params[:ativo_inativo])
+    @leitura = Leitura.where(torre: params[:torre], n_apto: params[:n_apto], at_inativo: params[:ativo_inativo])
     render json: @leitura
   end
 

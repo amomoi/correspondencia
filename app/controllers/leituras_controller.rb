@@ -75,9 +75,9 @@ class LeiturasController < ApplicationController
     render json: @leitura, only: [:id] 
   end
 
-  def checkativoivo
+  def checkativo
     releaseCrossDomain
-    @leitura = Leitura.where(torre: params[:torre], n_apto: params[:n_apto], at_inativo: params[:ativo_inativo])
+    @leitura = Leitura.where(torre: params[:torre], n_apto: params[:n_apto], ativo_inativo: params[:ativo_inativo])
     render json: @leitura
   end
 

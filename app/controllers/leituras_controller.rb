@@ -42,6 +42,7 @@ class LeiturasController < ApplicationController
 
   # PATCH/PUT /leituras/1 or /leituras/1.json
   def update
+    releaseCrossDomain
     respond_to do |format|
       if @leitura.update(leitura_params)
         format.html { redirect_to leitura_url(@leitura), notice: "Leitura was successfully updated." }

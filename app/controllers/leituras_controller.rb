@@ -107,12 +107,11 @@ class LeiturasController < ApplicationController
       params.require(:leitura).permit(:torre, :n_apto, :id_page, :senha, :envio, :n_encomendas, :box_id, :ativo_inativo)
     end
 
-    def releaseCrossDomain
-
-         
+    def releaseCrossDomain         
       headers['Access-Control-Allow-Origin'] = '*'
       headers['Access-Control-Allow-Methods'] = '*'
       headers['Access-Control-Request-Method'] = '*'
       headers['Access-Control-Allow-Headers'] = '*'
+      headers['Access-Control-Max-Age'] = '600'
     end
 end

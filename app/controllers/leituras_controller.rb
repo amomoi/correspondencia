@@ -111,7 +111,7 @@ class LeiturasController < ApplicationController
 
       origin = request.headers["Origin"]
 
-      if (not origin.nil?) and (origin == "http://bluelocker.ampmsolucoes.com.br/" or origin == "https://api.ampmsolucoes.com.br" or origin == "192.168.15.10")
+      if (not origin.nil?) and (origin == "https://bluelocker.ampmsolucoes.com.br/" or origin == "https://api.ampmsolucoes.com.br" or origin == "192.168.15.10")
         origin = origin
         else
           origin = ""

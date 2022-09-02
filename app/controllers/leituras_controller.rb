@@ -93,7 +93,14 @@ class LeiturasController < ApplicationController
     @leitura = Leitura.where(box: params[:box], ativo_inativo: params[:ativo_inativo])
     render json: @leitura
   end
+  
+  def envio_email
+    releaseCrossDomain
+    @leitura = Leitura.find_by(id: params[:id])
+    @leitura.update(envio: params[:envio])
+    render json: @leitura
 
+  end
   
 
   private
@@ -104,7 +111,7 @@ class LeiturasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def leitura_params
-      params.require(:leitura).permit(:torre, :n_apto, :id_page, :senha, :envio, :n_encomendas, :box_id, :ativo_inativo)
+      params.require(:leitura).permit(:id, :torre, :n_apto, :id_page, :senha, :envio, :n_encomendas, :box_id, :ativo_inativo)
     end
 
     def releaseCrossDomain         

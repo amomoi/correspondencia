@@ -8,7 +8,7 @@ class LeiturasController < ApplicationController
     @leituras = Leitura.all
   end
 
-  # GET /leituras/1 or /leituras/1.json
+  # GET /leituras/1 or /leituras/1.json/wp-content/uploads/2021/06/Captura-de-Tela-2021-06-28-às-22.14.23.png
   def show
     releaseCrossDomain
     render json: @leitura
@@ -74,6 +74,12 @@ class LeiturasController < ApplicationController
     releaseCrossDomain
     @leitura = Leitura.where(senha: params[:senha], ativo_inativo: params[:ativo_inativo])
     render json: @leitura, only: [:id] 
+  end
+
+  def check_vazio
+    releaseCrossDomain
+    @leitura = Leitura.where(ativo_inativo: params[:ativo_inativo])
+    render json: @leitura, only: [:box_id]
   end
 
   def checkativo

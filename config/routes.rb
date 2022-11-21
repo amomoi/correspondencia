@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get '/proc_por_unidade', to: 'leituras#proc_por_unidade'
   get '/proc_por_box', to: 'leituras#proc_por_box'
   get '/envio_email', to: 'leituras#envio_email'
+  get '/check_vazio', to:'leituras#check_vazio'
 
 end

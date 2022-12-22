@@ -1,0 +1,2 @@
+class Lockercliente < ApplicationRecord
+end

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :leituras
+  resources :status_boxes
+  resources :lockerusuarios
+  resources :lockerclientes
   resources :boxes
-  resources :usuarios
-  resources :clientes
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 

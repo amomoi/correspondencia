@@ -10,41 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_20_204854) do
+ActiveRecord::Schema.define(version: 2022_12_22_150805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "boxes", force: :cascade do |t|
     t.string "numero"
-    t.bigint "cliente_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["cliente_id"], name: "index_boxes_on_cliente_id"
+    t.bigint "lockercliente_id"
+    t.index ["lockercliente_id"], name: "index_boxes_on_lockercliente_id"
   end
 
-  create_table "clientes", force: :cascade do |t|
+  create_table "lockerclientes", force: :cascade do |t|
     t.string "nome_empresa"
     t.string "site"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "leituras", force: :cascade do |t|
-    t.string "torre"
-    t.string "n_apto"
-    t.string "id_page"
-    t.string "senha"
-    t.integer "envio"
-    t.integer "n_encomendas"
-    t.bigint "box_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "ativo_inativo"
-    t.index ["box_id"], name: "index_leituras_on_box_id"
-  end
-
-  create_table "usuarios", force: :cascade do |t|
+  create_table "lockerusuarios", force: :cascade do |t|
     t.string "nome"
     t.string "email"
     t.string "cpf"
@@ -54,6 +40,21 @@ ActiveRecord::Schema.define(version: 2022_07_20_204854) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "boxes", "clientes"
-  add_foreign_key "leituras", "boxes"
+  create_table "status_boxes", force: :cascade do |t|
+    t.string "torre"
+    t.string "n_apto"
+    t.string "id_page"
+    t.string "senha"
+    t.string "envio"
+    t.string "n_encomendas"
+    t.string "box_number"
+    t.string "ativo_inativo"
+    t.bigint "lockercliente_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lockercliente_id"], name: "index_status_boxes_on_lockercliente_id"
+  end
+
+  add_foreign_key "boxes", "lockerclientes"
+  add_foreign_key "status_boxes", "lockerclientes"
 end

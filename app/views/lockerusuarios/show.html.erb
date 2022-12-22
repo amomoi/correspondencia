@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @lockerusuario.nome %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @lockerusuario.email %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @lockerusuario.cpf %>
+</p>
+
+<p>
+  <strong>Celular:</strong>
+  <%= @lockerusuario.celular %>
+</p>
+
+<p>
+  <strong>Senha:</strong>
+  <%= @lockerusuario.senha %>
+</p>
+
+<%= link_to 'Edit', edit_lockerusuario_path(@lockerusuario) %> |
+<%= link_to 'Back', lockerusuarios_path %>

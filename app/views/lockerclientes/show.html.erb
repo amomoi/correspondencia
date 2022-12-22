@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome empresa:</strong>
+  <%= @lockercliente.nome_empresa %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @lockercliente.site %>
+</p>
+
+<%= link_to 'Edit', edit_lockercliente_path(@lockercliente) %> |
+<%= link_to 'Back', lockerclientes_path %>

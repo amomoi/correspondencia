@@ -1,0 +1,2 @@
+class Lockerusuario < ApplicationRecord
+end

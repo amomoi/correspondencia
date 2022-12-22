@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Status Boxes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Torre</th>
+      <th>N apto</th>
+      <th>Id page</th>
+      <th>Senha</th>
+      <th>Envio</th>
+      <th>N encomendas</th>
+      <th>Box number</th>
+      <th>Ativo inativo</th>
+      <th>Lockercliente</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @status_boxes.each do |status_box| %>
+      <tr>
+        <td><%= status_box.torre %></td>
+        <td><%= status_box.n_apto %></td>
+        <td><%= status_box.id_page %></td>
+        <td><%= status_box.senha %></td>
+        <td><%= status_box.envio %></td>
+        <td><%= status_box.n_encomendas %></td>
+        <td><%= status_box.box_number %></td>
+        <td><%= status_box.ativo_inativo %></td>
+        <td><%= status_box.lockercliente_id %></td>
+        <td><%= link_to 'Show', status_box %></td>
+        <td><%= link_to 'Edit', edit_status_box_path(status_box) %></td>
+        <td><%= link_to 'Destroy', status_box, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Status Box', new_status_box_path %>

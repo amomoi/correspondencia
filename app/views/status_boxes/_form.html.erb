@@ -1,0 +1,62 @@
+<%= form_with(model: status_box) do |form| %>
+  <% if status_box.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(status_box.errors.count, "error") %> prohibited this status_box from being saved:</h2>
+
+      <ul>
+        <% status_box.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :torre %>
+    <%= form.text_field :torre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :n_apto %>
+    <%= form.text_field :n_apto %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_page %>
+    <%= form.text_field :id_page %>
+  </div>
+
+  <div class="field">
+    <%= form.label :senha %>
+    <%= form.text_field :senha %>
+  </div>
+
+  <div class="field">
+    <%= form.label :envio %>
+    <%= form.text_field :envio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :n_encomendas %>
+    <%= form.text_field :n_encomendas %>
+  </div>
+
+  <div class="field">
+    <%= form.label :box_number %>
+    <%= form.text_field :box_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ativo_inativo %>
+    <%= form.text_field :ativo_inativo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lockercliente_id %>
+    <%= form.text_field :lockercliente_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

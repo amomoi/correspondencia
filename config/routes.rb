@@ -8,12 +8,12 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
   get 'home', to: 'home#index'
-  get '/boxrelease', to: 'leituras#checksenha'
-  get '/id_out', to: 'leituras#checkid'
-  get '/check_ativo', to: 'leituras#checkativo'
-  get '/proc_por_unidade', to: 'leituras#proc_por_unidade'
-  get '/proc_por_box', to: 'leituras#proc_por_box'
-  get '/envio_email', to: 'leituras#envio_email'
-  get '/check_vazio', to:'leituras#check_vazio'
+  get '/boxrelease', to: 'status_boxes#checksenha'
+  get '/id_out', to: 'status_boxes#checkid'
+  get '/check_ativo', to: 'status_boxes#checkativo'
+  get '/proc_por_unidade', to: 'status_boxes#proc_por_unidade'
+  get '/proc_por_box', to: 'status_boxes#proc_por_box'
+  get '/envio_email', to: 'status_boxes#envio_email'
+  get '/check_vazio', to:'status_boxes#check_vazio'
 
 end

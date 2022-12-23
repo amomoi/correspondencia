@@ -65,7 +65,7 @@ class StatusBoxesController < ApplicationController
   def checksenha
     releaseCrossDomain
     @status_box = StatusBox.where(senha: params[:senha])
-    render json: @status_box, only: [:box_numero]
+    render json: @status_box, only: [:box_number]
   end
 
   def checkid
@@ -77,7 +77,7 @@ class StatusBoxesController < ApplicationController
   def check_vazio
     releaseCrossDomain
     @status_box = StatusBox.where(ativo_inativo: params[:ativo_inativo])
-    render json: @status_box, only: [:box_numero]
+    render json: @status_box, only: [:box_number]
   end
 
   def checkativo

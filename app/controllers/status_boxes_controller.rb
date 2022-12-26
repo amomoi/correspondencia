@@ -70,31 +70,31 @@ class StatusBoxesController < ApplicationController
 
   def checkid
     releaseCrossDomain
-    @status_box = StatusBox.where(senha: params[:senha], ativo_inativo: params[:ativo_inativo])
+    @status_box = StatusBox.where(senha: params[:senha], ativo_inativo: params[:ativo_inativo], lockercliente_id: params[:lockercliente_id])
     render json: @status_box, only: [:id] 
   end
 
   def check_vazio
     releaseCrossDomain
-    @status_box = StatusBox.where(ativo_inativo: params[:ativo_inativo])
+    @status_box = StatusBox.where(ativo_inativo: params[:ativo_inativo], lockercliente_id: params[:lockercliente_id])
     render json: @status_box, only: [:box_number]
   end
 
   def checkativo
     releaseCrossDomain
-    @status_box = StatusBox.where(torre: params[:torre], n_apto: params[:n_apto], ativo_inativo: params[:ativo_inativo])
+    @status_box = StatusBox.where(torre: params[:torre], n_apto: params[:n_apto], ativo_inativo: params[:ativo_inativo], lockercliente_id: params[:lockercliente_id])
     render json: @status_box
   end
 
   def proc_por_unidade
     releaseCrossDomain
-    @status_box = StatusBox.where(torre: params[:torre], n_apto: params[:n_apto],ativo_inativo: params[:ativo_inativo])
+    @status_box = StatusBox.where(torre: params[:torre], n_apto: params[:n_apto],ativo_inativo: params[:ativo_inativo], lockercliente_id: params[:lockercliente_id])
     render json: @status_box
   end
 
   def proc_por_box
     releaseCrossDomain
-    @status_box = StatusBox.where(box: params[:box], ativo_inativo: params[:ativo_inativo])
+    @status_box = StatusBox.where(box_number: params[:box_number], ativo_inativo: params[:ativo_inativo], lockercliente_id: params[:lockercliente_id])
     render json: @status_box
   end
   
@@ -104,6 +104,12 @@ class StatusBoxesController < ApplicationController
     @status_box.update(envio: params[:envio])
     render json: @status_box
 
+  end
+
+  def status_boxes_por_cliente
+    releaseCrossDomain
+    @status_box = StatusBox.where(lockercliente_id: params[:lockercliente_id])
+    render json: @status_box
   end
 
   private

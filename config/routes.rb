@@ -15,5 +15,8 @@ Rails.application.routes.draw do
   get '/proc_por_box', to: 'status_boxes#proc_por_box'
   get '/envio_email', to: 'status_boxes#envio_email'
   get '/check_vazio', to:'status_boxes#check_vazio'
+  get '/status_boxes_por_cliente', to: 'status_boxes#status_boxes_por_cliente'
+  
+
 
 end

@@ -26,27 +26,16 @@ class StatusBoxesController < ApplicationController
   def create
     releaseCrossDomain
     @status_box = StatusBox.new(status_box_params)
-
-    if  !@status_box.errors.full_messages.empty? #teste para verificar se existe o box cadastrado
-
-        respond_to do |format|
-   
-
-              if @status_box.save
-                format.html { redirect_to status_box_url(@status_box), notice: "Status box was successfully created." }
-                format.json { render :show, status: :created, location: @status_box }
-              else
-                format.html { render :new, status: :unprocessable_entity }
-                format.json { render json: @status_box.errors, status: :unprocessable_entity }
-              end
-            end
-    else
-      puts "box ou id_cliente nao existe"
-      respond_to do |format|
-        format.html { render :new, notice: "Numero box ou id_cliente não existe"  ,  status: :unprocessable_entity}
-        format.json { head :no_content }
+ 
+    respond_to do |format|
+    
+      if @status_box.save
+        format.html { redirect_to status_box_url(@status_box), notice: "Status box was successfully created." }
+        format.json { render :show, status: :created, location: @status_box }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @status_box.errors, status: :unprocessable_entity }
       end
-      
     end
   end
 
@@ -144,4 +133,4 @@ class StatusBoxesController < ApplicationController
       headers['Access-Control-Max-Age'] = '600'
     end
 
-end
+  end

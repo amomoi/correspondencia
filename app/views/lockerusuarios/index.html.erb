@@ -10,6 +10,7 @@
       <th>Cpf</th>
       <th>Celular</th>
       <th>Senha</th>
+      <th>Cliente</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,6 +23,7 @@
         <td><%= lockerusuario.cpf %></td>
         <td><%= lockerusuario.celular %></td>
         <td><%= lockerusuario.senha %></td>
+        <td><%= lockerusuario.lockercliente_id %></td>
         <td><%= link_to 'Show', lockerusuario %></td>
         <td><%= link_to 'Edit', edit_lockerusuario_path(lockerusuario) %></td>
         <td><%= link_to 'Destroy', lockerusuario, method: :delete, data: { confirm: 'Are you sure?' } %></td>

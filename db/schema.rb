@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_22_150805) do
+ActiveRecord::Schema.define(version: 2023_01_08_193137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,9 @@ ActiveRecord::Schema.define(version: 2022_12_22_150805) do
     t.string "senha"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "lockercliente"
+    t.bigint "lockercliente_id"
+    t.index ["lockercliente_id"], name: "index_lockerusuarios_on_lockercliente_id"
   end
 
   create_table "status_boxes", force: :cascade do |t|
@@ -56,5 +59,6 @@ ActiveRecord::Schema.define(version: 2022_12_22_150805) do
   end
 
   add_foreign_key "boxes", "lockerclientes"
+  add_foreign_key "lockerusuarios", "lockerclientes"
   add_foreign_key "status_boxes", "lockerclientes"
 end

@@ -65,6 +65,6 @@ class LockerusuariosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def lockerusuario_params
-      params.require(:lockerusuario).permit(:nome, :email, :cpf, :celular, :senha)
+      params.require(:lockerusuario).permit(:nome, :email, :cpf, :celular, :senha, :lockercliente_id)
     end
 end

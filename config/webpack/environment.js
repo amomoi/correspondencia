@@ -1,7 +1,9 @@
-const { environment } = require('@rails/webpacker')
+
+const { environment } = require('@rails/webpacker');
+
+module.exports = environment;
 
 module.exports = {
-    // ...outras configurações
     node: {
       __dirname: true,
       __filename: true,

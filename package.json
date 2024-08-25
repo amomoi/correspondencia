@@ -2,7 +2,7 @@
   "name": "correspondencia",
   "private": true,
   "engines": {
-    "node": "16.x",  // ou outra versão compatível como 14.x ou 18.x
+    "node": "16.x", 
     "yarn": "1.x"
   },
   "dependencies": {

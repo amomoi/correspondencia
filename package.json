@@ -2,7 +2,7 @@
   "name": "correspondencia",
   "private": true,
   "engines": {
-    "node": "21.x",
+    "node": "16.x",
     "yarn": "1.x"
   },
   "dependencies": {
